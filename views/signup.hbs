@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up!</title>
+</head>
+<body>
+    <h2>Sign up here!</h2>
+    <form action="/signup" method="POST">
+    <label for="username">Username</label> <br>
+    <input type="text" name="username" id="username" required> <p></p>
+
+    <label for="date">Date of birth</label> <br>
+    <input type="date" name="date" id="date" required> <p></p>
+
+    <label for="sex">Your gender</label><br>
+    Female <input type="radio" name="sex" id="female" value="" required> <br>
+    Male <input type="radio" name="sex" id="male" value="" required> <p></p>
+
+    <label for="prefereedSex">Your prefereed sex (optional)</label><br>
+    Female <input type="radio" name="preferredSex" id="female" value=""> <br>
+    Male <input type="radio" name="preferredSex" id="male" value=""> <p></p>
+   
+
+    <label for="email">Email</label> <br>
+    <input type="email" name="email" id="email" required> <p></p>
+
+    <label for="password">Password</label> <br>
+    <input type="password" name="password" id="password" required> <p></p>
+
+    <button type="submit">Sign up!</button> <p></p>
+     ..or go to <a href="/login">Log in!</a>
+    </form>
+</body>
+</html>
