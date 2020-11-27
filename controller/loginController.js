@@ -1,19 +1,28 @@
 const users = require('../harduser');
-const signupController = require("./signupController")
-var jwt = require('jsonwebtoken');
-
+var json = require('../users.json')
+/*
+var LocalStorage = require('node-localstorage').LocalStorage,
+localStorage = new LocalStorage('./scratch');
+*/
 
 
 function loginController(req, res) {
-    //Normalt vil man kigge om password og brugernavn stemmer, men det springer vi over
-    var user = users[0]
-    //normalt vil man gemme secret key et andet sted. 
-    //Her laves en token, som dÃ¸r om en time 
-    const token = jwt.sign({email: user.email, userID: user.id}, 'my_secret', { expiresIn: '1h' })
-    /*res.json({
-        token: token
-    })*/
-    console.log(token)
-    res.redirect("/myHomePage")
+
+    json.forEach(user => {
+        email = user.email
+        password = user.password
+        console.log(email)
+
+        if(email === req.body.email){
+            //localStorage.setItem(element.id)
+            console.log("worked")
+            res.redirect("/myHomePage")
+            return
+        } else{
+            res.render("login", {errormessage: "Wrong email or password"})
+            
+    }
+});
 }
+
 module.exports = loginController
