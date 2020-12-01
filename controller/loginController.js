@@ -1,5 +1,4 @@
-const users = require('../harduser');
-var json = require('../users.json')
+var json = require('../newUsers.json')
 /*
 var LocalStorage = require('node-localstorage').LocalStorage,
 localStorage = new LocalStorage('./scratch');
@@ -9,20 +8,21 @@ localStorage = new LocalStorage('./scratch');
 function loginController(req, res) {
 
     json.forEach(user => {
-        email = user.email
-        password = user.password
+        var email = user.email
         console.log(email)
-
+    try{
         if(email === req.body.email){
             //localStorage.setItem(element.id)
             console.log("worked")
             res.redirect("/myHomePage")
-            return
-        } else{
-            res.render("login", {errormessage: "Wrong email or password"})
             
-    }
+        } else {
+            res.render("login", {errormessage: "Wrong email, or try restart server"})
+        }
+        }catch{
+            throw "error"
+        }
 });
 }
 
-module.exports = loginController
+module.exports = loginController;

@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt")
-const users = require('../harduser');
+const users = [];
 var fs = require('fs');
 
 function signupController(req, res){
@@ -18,6 +18,8 @@ function signupController(req, res){
                         username: req.body.username,
                         age: req.body.age,
                         sex: req.body.sex,
+                        preferredSex: req.body.preferredSex,
+                        interests: req.body.interests,
                         email: req.body.email,
                         password: hash
                     })
@@ -30,7 +32,7 @@ function signupController(req, res){
                 }
                 console.log(users)
                 //gemmer de oprettede brugere i filen "users.txt"
-                fs.writeFile('users.json', JSON.stringify(users), function (err) {
+                fs.writeFile('newUsers.json', JSON.stringify(users), function (err) {
                     if (err) throw err;
                     console.log('Saved!');
                   });
