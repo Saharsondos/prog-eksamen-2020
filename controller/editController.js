@@ -30,6 +30,7 @@ function editController(req, res){
 
 module.exports = editController;
 
+//efter man har submittet sine ændringer, skal man genstarte serveren, før de vises på siden. 
 
 
 
