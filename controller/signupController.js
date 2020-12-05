@@ -32,7 +32,7 @@ function signupController(req, res){
                 }
                 console.log(users)
                 //gemmer de oprettede brugere i filen "users.txt"
-                fs.writeFile('newUsers.json', JSON.stringify(users), function (err) {
+                fs.writeFileSync('newUsers.json', JSON.stringify(users), function (err) {
                     if (err) throw err;
                     console.log('Saved!');
                   });
