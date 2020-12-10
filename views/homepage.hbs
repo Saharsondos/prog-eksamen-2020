@@ -1,1 +1,117 @@
-<p>welcome to your homepage </p>
+
+<h1 style="text-align: center;"><i>Partner In Crime</i> </h1>
+
+<!--Div for displaying my hardusers-->
+<div class="container">
+    <h3 style="text-align: center;">Find your Ride or Die here</h3>
+<!--Div for minnie-->
+<div class="harduserMinnie">
+
+<div>
+    <img src="minnie.jpg" alt="" style="width: 90%">
+</div>
+<div>
+    <ul>
+        <li>{{minnie.username}}</li>
+        <li>{{minnie.age}}</li>
+    </ul>
+    <a href="/seeMinnie"><p>  view full page </p></a>
+    <button class="likeBtnMinnie">like</button>
+    <button class="dislikeBtnMinnie" name="minnie">dislike</button> <p></p>
+</div>
+</div>
+<!--Div for mickey-->
+<div class="harduserMickey">
+    <div> <img src="mickey.jpg" alt=""></div>
+    <div>
+        <ul>
+            <li>{{mickey.username}}</li>
+            <li>{{mickey.age}}</li>
+        </ul>
+            <a href="/seeMickey"><p>  view full page </p></a>
+
+        <button class ="likeBtnMickey">like</button>
+        <button class="dislikeBtnMickey">dislike</button> <p></p>
+    </div>
+
+</div>
+<p class="noUsers" style="margin-left: 2%;">No more users left at the moment...</p>
+
+</div>
+
+<!--Div for displaying new users profile-->
+<div class="container">
+
+    <!--Div for displaying matches-->
+
+    <div >
+        <h3 style="text-align: center;">Your matches</h3>
+        <p class="matches">will be displaying matches here.</p>
+        <p></p>
+        <p><b> click on match to delete match</b></p>
+    </div>
+
+    <!--Div for displaying your profile information-->
+    <div>
+<h3 style="text-align: center;">Your profile</h3>
+{{#each newUser}}
+<ul>
+    <li>my username: {{this.username}}</li>
+    <li>my age: {{this.age}}</li>
+    <li>my gender: {{this.sex}}</li>
+    <li>my preffered sex: {{this.preferredSex}}</li>
+    <li>my interests: {{this.interests}}</li>
+    <li>my email: {{this.email}}</li>
+</ul>
+{{/each}}
+
+<a href="/editProfile"><button type="submit" formaction="/myHomePages" formmethod="POST" style="margin-left: 44%; margin-bottom:2%">Edit profile</button></a>
+<a href="/"><button type="submit" formaction="/" class="logoutBtn" style="margin-left: 45%; margin-bottom:2%">Log out</button></a>
+<button formaction="/myHomePage" formmethod="DELETE" style="color: red; margin-left:43%; margin-bottom:5%">Delete profile</button>
+</div>
+</div>
+
+
+
+
+<!--style sheet-->
+<style>
+    .container{
+        background-color: ;
+        display: block;
+        float: left;
+        margin: 0.15%;
+        width: 49%;
+        height: 100%;
+        
+    }
+    .harduserMickey, .harduserMinnie{
+        display: inline-block;
+        margin: 5%;
+    }
+
+    div{
+        border: black solid 1px;
+        background-color: white;
+    }
+    a{
+        color: black;
+    }
+    button{
+        margin-left: 15%;
+    }
+    body{
+        background-color: beige;
+    }
+    
+</style>
+
+
+
+
+
+<!--for at få jQuerys funktioner-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="../static/like-dislike.js">
+window.jQuery || document.write('<script src="http://mysite.com/jquery.min.js"><\/script>')
+</script>
