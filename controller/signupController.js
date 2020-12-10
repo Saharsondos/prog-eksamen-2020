@@ -31,8 +31,8 @@ function signupController(req, res){
                     console.log("something went wrong")
                 }
                 console.log(users)
-                //gemmer de oprettede brugere i filen "users.txt"
-                fs.writeFileSync('newUsers.json', JSON.stringify(users), function (err) {
+                //gemmer oprettet bruger i filen "newUsers.json"
+                fs.writeFile('newUsers.json', JSON.stringify(users), function (err) {
                     if (err) throw err;
                     console.log('Saved!');
                   });
