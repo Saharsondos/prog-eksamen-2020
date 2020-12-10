@@ -4,7 +4,6 @@ var fs = require('fs');
 function editController(req, res){
     try{
         editUsers.push({
-            id: Date.now().toString(),
             username: req.body.username,
             age: req.body.age,
             sex: req.body.sex,
@@ -14,10 +13,11 @@ function editController(req, res){
         })
         //brugeren oprettes, og man bliver sendt til login siden
         res.redirect("/myHomePage")
+    
         
     } catch{
         //brugeren kunne ikke oprettes, og man forbliver på signup siden
-        res.redirect("/editProfile").reload()
+        res.redirect("/editProfile")
         console.log("something went wrong")
     }
     console.log(editUsers)
@@ -30,7 +30,7 @@ function editController(req, res){
 
 module.exports = editController;
 
-//efter man har submittet sine ændringer, skal man genstarte serveren, før de vises på siden. 
+//efter man har submittet sine ændringer, skal man genstarte serveren, før de vises på siden. og man skal refreshe /myHomePage
 
 
 
