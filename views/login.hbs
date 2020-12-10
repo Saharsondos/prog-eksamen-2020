@@ -1,14 +1,10 @@
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in!</title>
-</head>
+
 
     <h2>Log in here!</h2>
     <form action="/login" method="POST">
     <label for="email">Email</label> <br>
-    <input type="email" name="email" id="email" required> <br>
+    <input type="email" name="email" class="email" required> <br>
     {{errormessage}} <p></p>
 
     <label for="password">Password</label> <br>
@@ -18,17 +14,8 @@
      ..or go to <a href="/signup">Sign up!</a>
     </form>
 
+<
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script>
+<script src="../static/like-dislike.js">
 window.jQuery || document.write('<script src="http://mysite.com/jquery.min.js"><\/script>')
-//const json = require('../newUsers.json')
-
-$(document).ready(function() {
-    $('.loginBtn').click(function(){
-        console.log(json)
-
-        localStorage.setItem("id", "test")
-    })
-    });
-
 </script>
