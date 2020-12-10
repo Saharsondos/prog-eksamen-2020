@@ -12,12 +12,11 @@ function loginController(req, res) {
         console.log(email)
     try{
         if(email === req.body.email){
-            //localStorage.setItem(element.id)
             console.log("worked")
             res.redirect("/myHomePage")
             
         } else {
-            res.render("login", {errormessage: "Wrong email, or try restart server"})
+            res.render("login", {errormessage: "Wrong email, or try restarting the server"})
         }
         }catch{
             throw "error"
